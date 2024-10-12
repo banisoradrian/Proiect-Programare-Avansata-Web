@@ -1,0 +1,50 @@
+﻿@using ReviewsApp.Rating
+@model ReviewsApp.Models.ReviewViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Add Review</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TITLE" class="control-label"></label>
+                <input asp-for="TITLE" class="form-control" />
+                <span asp-validation-for="TITLE" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CONTENT" class="control-label"></label>
+                <textarea asp-for="CONTENT" class="form-control"> </textarea>
+                <span asp-validation-for="CONTENT" class="text-danger"></span>
+            </div>
+            
+            <div class="form-group">
+                <label asp-for="RATING" class="control-label"></label>
+                <select asp-for="RATING" class="form-select" asp-items="Html.GetEnumSelectList<Rating>()"> </select>
+                <span asp-validation-for="RATING" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SUBJECT" class="control-label"></label>
+                <input asp-for="SUBJECT" class="form-control" />
+                <span asp-validation-for="SUBJECT" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-2">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

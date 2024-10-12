@@ -1,0 +1,21 @@
+﻿@model IEnumerable<ReviewsApp.Data.Review>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class = "row rounded-2 hero">
+    <div class = "d-flex flex-column justify-content-center align-items-center">
+        <h1 class="display-1 fw-bold text-center text-white hero-title">ReviewsApp</h1>
+        <h3 class="text-white">Read and write reviews</h3>
+    </div>
+</div>
+
+<h2 class="text-center mb-5">Check Our Reviews</h2>
+
+<p>
+    <a asp-action="Create" asp-controller="Reviews" class="btn btn-primary">Create a new review</a>
+</p>
+@foreach (var item in Model)
+{
+    await Html.RenderPartialAsync("_Review" , item);
+}
