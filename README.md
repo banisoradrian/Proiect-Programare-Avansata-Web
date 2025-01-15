@@ -5,10 +5,10 @@ Tema aleasa de mine este o aplicatie simpla de a trimite Review-uri , acest proi
 # Functionalitati principale 
 Aplicația permite realizarea tuturor operațiunilor CRUD și autentificarea utilizatorilor, toate acestea fiind gestionate cu ajutorul ORM-ului EntityFramework Core.
 
-#Instructiuni de utilizare 
+# Instructiuni de utilizare 
 Se creeaza contul (daca nu suntem logati nu putem adauga sau sterge review-uri) dupa care apasam pe butonul albastru de creare review.
 
-#Alte informatii
+# Alte informatii
 
 Aplicatia este construita in asa fel incat sa putem sterge/modifica doar review-urile create de noi.
 
